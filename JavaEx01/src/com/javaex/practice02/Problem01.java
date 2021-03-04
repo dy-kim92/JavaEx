@@ -7,10 +7,10 @@ public class Problem01 {
 		int count = 0;
 		int total = 0;
 		
-		for(int i = 0; i < data.length; i++) {
-			if(data[i] % 3 == 0) {
+		for(int num: data) {
+			if(num % 3 == 0) {
 				count++;
-				total += data[i];
+				total += num;
 			}
 		}
 		

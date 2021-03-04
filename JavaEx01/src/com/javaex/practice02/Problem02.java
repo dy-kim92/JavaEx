@@ -8,7 +8,7 @@ public class Problem02 {
 		Scanner sc = new Scanner(System.in);
 		
 		int[] arr = new int[5];
-		double total = 0;
+		int total = 0;
 		
 		for(int i = 0; i < arr.length; i++) {
 			System.out.print("숫자를 입력하세요 >> ");
@@ -16,9 +16,9 @@ public class Problem02 {
 			total += arr[i];
 		}
 		
-		double result = total / arr.length;
+		double result = (double)total / arr.length;
 		
-		System.out.printf("평균은 %.1f입니다.", result);
+		System.out.printf("합계는 %d, 평균은 %.1f입니다.\n", total, result);
 		
 		sc.close();
 	}

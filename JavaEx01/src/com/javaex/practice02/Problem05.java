@@ -14,7 +14,9 @@ public class Problem05 {
 		int total = 0;
 		int count = 0;
 		
+		//	행
 		for(int row = 0; row < scoreboard.length; row++) {
+			//	열
 			for(int col = 0; col < scoreboard[row].length; col++) {
 				if(scoreboard[row][col] >= 85) {
 					total += scoreboard[row][col];
@@ -24,7 +26,8 @@ public class Problem05 {
 		}
 		
 		System.out.println("총합 >> " + total);
-		System.out.println("평균값 >> " + (total / count));
+//		System.out.println("평균값 >> " + (double)total / count);
+		System.out.printf("평균값 >> %.2f\n", ((double)total / count));
 		
 	}
 
