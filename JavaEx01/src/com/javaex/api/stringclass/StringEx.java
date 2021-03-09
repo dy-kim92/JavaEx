@@ -4,8 +4,8 @@ public class StringEx {
 	public static void main(String[] args) {
 		
 //		stringBasic();
-//		usefulMethods();
-		stringBufferEx();
+		usefulMethods();
+//		stringBufferEx();
 		
 	}
 	
