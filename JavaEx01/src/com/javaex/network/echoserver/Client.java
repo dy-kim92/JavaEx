@@ -12,6 +12,7 @@ import java.io.Writer;
 import java.net.ConnectException;
 import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.util.Scanner;
 
 public class Client {
 	
@@ -45,17 +46,38 @@ public class Client {
 			Reader isr = new InputStreamReader(is);
 			BufferedReader br = new BufferedReader(isr);
 			
-			//	메세지 송신
-			String message = "테스트 메세지";
-			bw.write(message);
-			bw.newLine();
-			bw.flush();
-			System.out.println("CLIENT : [전송 메세지] : " + message);
+//			//	메세지 송신
+//			String message = "테스트 메세지";
+//			bw.write(message);
+//			bw.newLine();
+//			bw.flush();
+//			System.out.println("CLIENT : [전송 메세지] : " + message);
+//			
+//			//	메세지 수신
+//			String rcvMsg = br.readLine();
+//			System.out.println("CLIENT : [수신 메세지] : " + rcvMsg);
 			
-			//	메세지 수신
-			String rcvMsg = br.readLine();
-			System.out.println("CLIENT : [수신 메세지] : " + rcvMsg);
+			//	사용자로부터 메세지를 입력 -> 서버로 전송
+			Scanner sc = new Scanner(System.in);
 			
+			while(true) {
+				System.out.print("CLIENT :> ");
+				String message = sc.nextLine();		//	1줄 입력
+				if(message.equals("/q")) {
+					//	탈출
+					System.out.println("CLIENT : [접속을 종료합니다]");
+					break;
+				}
+				System.out.println("CLIENT : [메세지 전송] : " + message);
+				bw.write(message);
+				bw.newLine();
+				bw.flush();
+				
+				String rcvMsg = br.readLine();
+				System.out.println("CLIENT : [메세지 수신] : " + rcvMsg);
+			}
+			
+			sc.close();
 			br.close();
 			bw.close();
 			

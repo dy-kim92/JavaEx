@@ -42,14 +42,14 @@ public class Problem04 {
 		}
 		
 		for (int i = 0; i < num; i++) {
-			for(int value: lotto) {
-				result[i][value] = value;
+			for(int j = 0; j < lotto.length; j++) {
+				result[i][j] = lotto[j];
 			}
 		}
 		
 		for (int i = 0; i < num; i++) {
-			for (int value: lotto) {
-				System.out.print(value + " ");
+			for(int j = 0; j < lotto.length; j++) {
+				System.out.print(lotto[j] + " ");
 			}
 			System.out.println();
 		}
