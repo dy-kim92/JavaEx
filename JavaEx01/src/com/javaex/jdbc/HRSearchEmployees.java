@@ -26,6 +26,9 @@ public class HRSearchEmployees {
 						"FROM employees " + 
 						"WHERE lower(first_name) LIKE '%" + keyword + "%' OR " + 
 								"lower(last_name) LIKE '%" + keyword + "%'";
+			//	보안 위험. 가독성 해침
+			// SQL Injection 공격에 취약함
+			
 			System.out.println("QUERY : " + sql);
 			
 			stmt = conn.createStatement();
